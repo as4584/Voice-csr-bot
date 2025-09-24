@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  # Add redis/db/ngrok if needed
+  placeholder:
+    image: alpine
+    command: ["sh", "-c", "echo infra placeholder && sleep 3600"]

@@ -1,0 +1,53 @@
+{
+  "scenario": "New appointment booking",
+  "turns": [
+    {
+      "role": "assistant",
+      "text": "Thanks for calling Example Clinic. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "text": "Hi, I want to book a premium consult for Thursday at 3pm. I'm Alex."
+    },
+    {
+      "role": "assistant",
+      "text": "Great, Alex. I can help with that. May I confirm your phone number?"
+    },
+    {
+      "role": "user",
+      "text": "201-555-0199"
+    },
+    {
+      "role": "assistant",
+      "text": "To confirm: Premium consult for Alex on Thursday at 3:00 PM. Shall I book this now?"
+    },
+    {
+      "role": "user",
+      "text": "Yes, please."
+    },
+    {
+      "role": "tool_call",
+      "name": "create_appointment",
+      "arguments": {
+        "name": "Alex",
+        "phone": "201-555-0199",
+        "service": "Premium consult",
+        "datetime": "2025-09-25T15:00:00-04:00",
+        "durationMinutes": 60,
+        "timezone": "America/New_York"
+      }
+    },
+    {
+      "role": "tool_result",
+      "name": "create_appointment",
+      "result": {
+        "ok": true,
+        "confirmation": "CONF-DEMO123"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "All set! Your confirmation code is CONF-DEMO123. Would you like a text reminder?"
+    }
+  ]
+}
